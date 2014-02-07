@@ -15,27 +15,20 @@ function Engine3d()
 		this.height = h;
 		this.eye = eye;
 		this.can = document.getElementById(canID);
-		this.can.addEventListener("mousemove", MouseFunct);
+		window.addEventListener("mousemove", MouseFunct);
 		this.context = this.can.getContext("2d");
 		this.Update = UpdateFunc;
 		this.LoadIdentity();
 	}
-	this.Redraw = function()
+	this.DL = function(line)
+	{
+		p1 = this.Calc(line.p1);
+		p2 = this.Calc(line.p2);
+		this.DrawLine2(p1,p2);
+	}
+	this.Clear = function()
 	{
 		this.context.clearRect(0,0,this.width, this.height);
-		this.context.beginPath();
-		for(i = 0; i < this.drawData.length; i++)
-		{
-			p1 = this.Calc(this.drawData[i].p1);
-			p2 = this.Calc(this.drawData[i].p2);
-			this.DrawLine(p1,p2);
-		}
-		this.context.stroke();
-	}
-	this.AddLine = function(line)
-	{
-		this.drawData.push(line);
-		return this.drawData.length-1;
 	}
 	this.Calc = function(p)
 	{
@@ -43,10 +36,12 @@ function Engine3d()
 		p2.Div(p2.w);
 		return p2;
 	}
-	this.DrawLine = function(p1, p2)
+	this.DrawLine2 = function(p1, p2)
 	{
+		this.context.beginPath();
 		this.context.moveTo(p1.x+this.width/2,this.height/2 - p1.y);
 		this.context.lineTo(p2.x+this.width/2,this.height/2 - p2.y);
+		this.context.stroke();
 	}
 	this.LoadIdentity = function()
 	{
