@@ -9,7 +9,7 @@ The contents:
  - References
 
 ====
-#The aim of the project
+##The aim of the project
 
 This is a simple library, that may be used for small application like as micro-games. It provides all needs to make simple 3D griphics (but without texture rendering) and some input interfaces.
 
