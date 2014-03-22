@@ -34,6 +34,11 @@ Using matrices is good idea because it's simply (in comparsion with other method
 ##The user guide
 
 ##The developer guide
+Firstly, it's nessesury to link 3d.js:
+```html
+<script src="3d.js"></script>
+```
 
+Examle of using: 3D Cube, that rotates with your mouse [GitHub Projcet](http://github.com/kriot/3DCube/)
 ##Refereces
 
