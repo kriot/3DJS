@@ -34,10 +34,59 @@ Using matrices is good idea because it's simply (in comparsion with other method
 ##The user guide
 
 ##The developer guide
-Firstly, it's nessesury to link 3d.js:
+###Linking
+Firstly, it's nessesury to link 3d.js: in your .html file
 ```html
 <script src="3d.js"></script>
 ```
+###Initializing
+Add to your DOContentLoaded method:
+```js
+eng = new Engine3D();
+eng.Init("canv",640,480,Update,Mouse,KeyUp,KeyDown,30); //"canv" - ID of your canvas html5 element, 640,480 - resolution of canvas, Update,Mouse,KeyUp,KeyDown - event handlers, 30 - it's fps that you want.
+```
+Now you have to declare these event handlers (funcitons). Typical declaration:
+```js
+function Mouse(event)
+{
+	eng.mouse = new Point2(event.clientX, event.clientY); // we have to save actual mouse position
+}
+function KeyDown(event) // 
+{
+	eng.key[event.keyCode] = true; 
+}
+function KeyUp(event)
+{
+	eng.key[event.keyCode] = false;
+}
+``` 
+You don't have to change these functions, it's the most useful version.
+And ```Update``` you have to change - it contains logic of your application. It runs every time frame updates (in the best way, with fps you have declared)
+Examle of Update function:
+```js
+function Update()
+{
+	eng.LoadIdentity();
+	eng.Clear();
+	mp = new Matrix();
+	mp.MakeP(1/500); // 1/500 - factor of projection. 
+	eng.proj = mp;
+	//here your code. Look down for comments.
+}
+```
+"Here your code", but what I should write? What I am able to use?
+* ```var m = new Matrix();``` - generates new matrix
+* ```m.MakeT(p3);``` - makes matrix of Translation for p3 vector (```new Point3(x,y,z)```)
+* ```m.MakeS(p3);``` makes matrix of scale for p3 vector (usualy uses x=y=z)
+* ```m.MakeRX(a)``` - makes matrix of rotation round X axis
+* ```m.MakeRY(a)``` - makes matrix of rotation round Y axis
+* ```m.MakeRZ(a)``` - makes matrix of rotation round Z axis
+* ```m.MakeP(k)``` - make matrix of projection
+* ```Use(m)``` - applyes matrix m to now using matrix
+* ```GetM()``` - return current matrix
+* ```SetM(m)``` - sets currnt matrix
+* ```DL(line)``` - draws line
+* ```new Line(p3_1,p3_2)``` - makes new line from p3_1 to p3_2
 
 Examle of using: 3D Cube, that rotates with your mouse [GitHub Projcet](http://github.com/kriot/3DCube/)
 ##Refereces
