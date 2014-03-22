@@ -5,20 +5,27 @@ function Engine3d()
 	this.height;
 	this.context;
 	this.Update;
-	this.drawData = new Array();
-	this.eye;
 	this.mouse = new Point2(0,0);
 	this.mat;
-	this.Init = function(canID, w, h, UpdateFunc, MouseFunct,KeyFunct, eye)
+	this.proj;
+	this.key = new Array();
+	this.ticker;
+	this.kLeft = 37;
+	this.kRight = 39;
+	this.kUp = 38;
+	this.kDown = 40;
+	this.Init = function(canID, w, h, UpdateFunc, MouseFunct, KeyUp, KeyDown, fps)
 	{
 		this.width = w;
 		this.height = h;
-		this.eye = eye;
 		this.can = document.getElementById(canID);
 		window.addEventListener("mousemove", MouseFunct);
+		window.addEventListener("keydown", KeyDown);
+		window.addEventListener("keyup",KeyUp);
 		this.context = this.can.getContext("2d");
 		this.Update = UpdateFunc;
 		this.LoadIdentity();
+		this.ticker = setInterval(Update,1000/fps);
 	}
 	this.DL = function(line)
 	{
@@ -32,7 +39,7 @@ function Engine3d()
 	}
 	this.Calc = function(p)
 	{
-		p2 = p.MulMatrix(this.mat);
+		p2 = p.MulMatrix(this.mat.Mul(this.proj));
 		p2.Div(p2.w);
 		return p2;
 	}
@@ -52,7 +59,32 @@ function Engine3d()
 	}
 	this.Use = function(m)
 	{
-		this.mat = this.mat.Mul(m);
+		this.mat = m.Mul(this.mat);
+	}
+	this.GetM = function()
+	{
+		return this.mat;
+	}
+	this.SetM = function(m)
+	{
+		this.mat = m;
+	}
+	this.DrawModel = function(mod)
+	{
+		var ms = this.GetM();
+		for(i=0;i<mod.length;i++)
+		{
+			obj = mod[i];
+			if(obj.type=="DL")
+				this.DL(new Line(new Point3(obj.s.x,obj.s.y,obj.s.z),new Point3(obj.e.x,obj.e.y,obj.e.z)));
+			if(obj.type=="MT")
+			{
+				var m = new Matrix();
+				m.MakeT(new Point3(obj.x,obj.y,obj.z));
+				this.Use(m);
+			}
+		}
+		this.SetM(ms);
 	}
 }
 
@@ -101,11 +133,11 @@ function Matrix()
 	this.Mul = function(m2)
 	{
 		ret = new Matrix();
-		for(i = 0; i< 4;i++)
-			for(j = 0; j <4; j++)
+		for(var i = 0; i< 4;i++)
+			for(var j = 0; j <4; j++)
 			{
 				ret.data[i][j] = 0;
-				for(k = 0; k<4;k++)
+				for(var k = 0; k<4;k++)
 					ret.data[i][j] += this.data[i][k]*m2.data[k][j];
 			}
 		return ret
@@ -121,5 +153,17 @@ function Matrix()
 	this.MakeP = function(r)
 	{
 		this.data = [[1, 0, 0, 0],[0, 1, 0, 0], [0, 0 , 0, r],[0, 0, 0, 1]];
+	}
+	this.MakeRX = function(a)
+	{
+		this.data = [[1,0,0,0],[0,Math.cos(a),-Math.sin(a),0],[0,Math.sin(a),Math.cos(a),0],[0,0,0,1]];
+	}
+	this.MakeRY = function(a)
+	{
+		this.data = [[Math.cos(a),0,Math.sin(a),0],[0,1,0,0],[-Math.sin(a),0,Math.cos(a),0],[0,0,0,1]];
+	}
+	this.MakeRZ = function(a)
+	{
+		this.data = [[Math.cos(a),-Math.sin(a),0,0],[Math.sin(a), Math.cos(a),0,0],[0,0,1,0],[0,0,0,1]];
 	}
 }
