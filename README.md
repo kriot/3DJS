@@ -17,11 +17,11 @@ All operations are made by 4x4 matrix.
 
 It works on mobile platforms!
 
-#Data stuctures, algorithms and math analysis
+##Data stuctures, algorithms and math analysis
 
 The main idea of the project is using matrices to make any tranformations with points (or vectors). 
 
-##How it works
+###How it works
 Let all points are 4 demention vectors (x,y,z,1).
 Let A is a transformations matrix (it may be translation, scale, rotation round X, Y or Z axis)
 So all we need to make this operation with this vector is multiply our vector by this matrix.
@@ -31,9 +31,9 @@ Now we can draw line above two points on a 2d screen. (It's correct because 3d l
 
 Using matrices is good idea because it's simply (in comparsion with other methods) and fast. We can save now using matrix or load identity to normalize basics.
 
-#The user guide
+##The user guide
 
-#The developer guide
+##The developer guide
 
-#Refereces
+##Refereces
 
