@@ -94,13 +94,14 @@ function Update()
 ###Example
 Example of using: 3D Cube, that rotates with your mouse [GitHub Projcet](http://github.com/kriot/3DCube/)
 ##Refereces
+
 ####Math:
-http://open.gl/transformations
+ * http://open.gl/transformations
+ * http://en.wikipedia.org/wiki/Matrix_(mathematics)
 
-http://en.wikipedia.org/wiki/Matrix_(mathematics)
 ####Realization:
-http://www.w3schools.com/html/html5_canvas.asp
+ * http://www.w3schools.com/html/html5_canvas.asp
+ * http://en.wikipedia.org/wiki/Microsoft_XNA - style of the system
 
-http://en.wikipedia.org/wiki/Microsoft_XNA - style of the system
 ####Inspired by:
-http://www.opengl.org/
+ * http://www.opengl.org/
