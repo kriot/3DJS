@@ -90,8 +90,9 @@ function Update()
 * ```SetM(m)``` - sets currnt matrix
 * ```DL(line)``` - draws line
 * ```new Line(p3_1,p3_2)``` - makes new line from p3_1 to p3_2
-###Examle
-Examle of using: 3D Cube, that rotates with your mouse [GitHub Projcet](http://github.com/kriot/3DCube/)
+
+###Example
+Example of using: 3D Cube, that rotates with your mouse [GitHub Projcet](http://github.com/kriot/3DCube/)
 ##Refereces
 ####Math:
 http://open.gl/transformations
