@@ -13,7 +13,9 @@ The contents:
 
 This is a simple library, that may be used for small application like as micro-games. It provides all needs to make simple 3D griphics (but without texture rendering) and some input interfaces.
 All operations are made by 4x4 matrix.
+
 It works on mobile platforms!
+
 It helps you to understand how does OpenGL and XNA DirectX work.
 ##Data stuctures, algorithms and math analysis
 
