@@ -22,22 +22,22 @@ It helps you to understand how does OpenGL and XNA DirectX work.
 The main idea of the project is using matrices to make any tranformations with points (or vectors). 
 
 ###How it works
-Let all points are 4 dimention vectors (x,y,z,1).
+Let all points are 4 dimension vectors (x,y,z,1).
 Let A is a transformations matrix (it may be translation, scale, rotation round X, Y or Z axis)
 So all we need to make this operation with this vector is multiply our vector by this matrix.
-We are able to make composition of matrices my multiplicte those.
-In the end, we should multiplicate vector for projection matrix and normalize w (the lastest coordinate). We use 4x4 matrices only to have a possile make this operation.
+We are able to make composition of matrices my multiplicate those.
+In the end, we should multiplicate vector for projection matrix and normalize w (the lastest coordinate). We use 4x4 matrices only to be able to make this operation.
 Now we can draw line above two points on a 2d screen. (It's correct because 3d line goes to a line in one point projection)
 
-Using matrices is good idea because it's simply (in comparsion with other methods) and fast. We can save now using matrix or load identity to normalize basics.
+Using matrices is good idea because it's simple (in comparsion with other methods) and fast. We can save now using matrix or load identity to normalize basics.
 
 ##The user guide
-Standart user interface looks like white rectangle (white canvas). Thera may be some lines that are drown by developer's code. Standart user interface doesn't provide any menus and buttons. It'a able to caught your mouse and/or keyboard.
-You have to ask the program developer of any instructions and guides.
+Standart user interface looks like white rectangle (white canvas). There may be some lines that are drawn by developer's code. Standart user interface doesn't provide any menus and buttons. It's able to caught your mouse and/or keyboard.
+You have to ask the program developer for any instructions and guides.
  
 ##The developer guide
 ###Linking
-Firstly, it's nessesury to link 3d.js: in your .html file
+Firstly, it's nessesary to link 3d.js: in your .html file
 ```html
 <script src="3d.js"></script>
 ```
