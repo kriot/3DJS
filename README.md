@@ -11,18 +11,18 @@ The contents:
 ====
 ##The aim of the project
 
-This is a simple library, that may be used for small application like as micro-games. It provides all needs to make simple 3D griphics (but without texture rendering) and some input interfaces.
+This is a simple library, that may be used for small application like as micro-games. It provides all needs to make simple 3D graphics (but without texture rendering) and some input interfaces.
 All operations are made by 4x4 matrix.
 
 It works on mobile platforms!
 
 It helps you to understand how does OpenGL and XNA DirectX work.
-##Data stuctures, algorithms and math analysis
+##Data structures, algorithms and math analysis
 
 The main idea of the project is using matrices to make any tranformations with points (or vectors). 
 
 ###How it works
-Let all points are 4 demention vectors (x,y,z,1).
+Let all points are 4 dimention vectors (x,y,z,1).
 Let A is a transformations matrix (it may be translation, scale, rotation round X, Y or Z axis)
 So all we need to make this operation with this vector is multiply our vector by this matrix.
 We are able to make composition of matrices my multiplicte those.
@@ -32,7 +32,7 @@ Now we can draw line above two points on a 2d screen. (It's correct because 3d l
 Using matrices is good idea because it's simply (in comparsion with other methods) and fast. We can save now using matrix or load identity to normalize basics.
 
 ##The user guide
-Standart user interface looks like white rectangle (white canvas). Thera may be some lines that are drown by developer's code. Standart user interaface doesn't provide any menus and buttons. It'a able to caught your mouse and/or keyboard.
+Standart user interface looks like white rectangle (white canvas). Thera may be some lines that are drown by developer's code. Standart user interface doesn't provide any menus and buttons. It'a able to caught your mouse and/or keyboard.
 You have to ask the program developer of any instructions and guides.
  
 ##The developer guide
@@ -85,9 +85,9 @@ function Update()
 * ```m.MakeRY(a)``` - makes matrix of rotation round Y axis
 * ```m.MakeRZ(a)``` - makes matrix of rotation round Z axis
 * ```m.MakeP(k)``` - make matrix of projection
-* ```Use(m)``` - applyes matrix m to now using matrix
+* ```Use(m)``` - applies matrix m to now using matrix
 * ```GetM()``` - return current matrix
-* ```SetM(m)``` - sets currnt matrix
+* ```SetM(m)``` - sets current matrix
 * ```DL(line)``` - draws line
 * ```new Line(p3_1,p3_2)``` - makes new line from p3_1 to p3_2
 
