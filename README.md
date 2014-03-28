@@ -93,7 +93,7 @@ function Update()
 
 ###Example
 Example of using: 3D Cube, that rotates with your mouse [GitHub Projcet](http://github.com/kriot/3DCube/)
-##Refereces
+##References
 
 ####Math:
  * http://open.gl/transformations
