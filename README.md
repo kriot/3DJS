@@ -32,7 +32,7 @@ Now we can draw line above two points on a 2D screen. (It's correct because a 3D
 Using matrices is good idea because it's simple (in comparsion with other methods) and fast. We can save now using matrix or load identity to normalize basics.
 
 ##The user guide
-Standart user interface looks like white rectangle (white canvas). There may be some lines that are drawn by developer's code. Standart user interface doesn't provide any menus and buttons. It's able to caught your mouse and/or keyboard.
+Standart user interface looks like a white rectangle (white canvas). There may be some lines that are drawn by developer's code. The standart user interface doesn't provide any menus and buttons. It could caught your mouse and/or keyboard.
 You have to ask the program developer for any instructions and guides.
  
 ##The developer guide
