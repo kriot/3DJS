@@ -47,7 +47,7 @@ Add to your DOMContentLoaded method this code:
 eng = new Engine3D();
 eng.Init("canv",640,480,Update,Mouse,KeyUp,KeyDown,30); //"canv" - ID of your canvas html5 element, 640,480 - resolution of canvas, Update,Mouse,KeyUp,KeyDown - event handlers, 30 - it's fps that you want.
 ```
-Now you have to declare these event handlers (funcitons). Typical declaration:
+Now you have to declare these event handlers (funcitons). The typical declaration:
 ```js
 function Mouse(event)
 {
