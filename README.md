@@ -11,7 +11,7 @@ The contents:
 ====
 ##The aim of the project
 
-This is a simple library, that may be used for small application such as micro-games. It provides all needs to make simple 3D graphics (but without texture rendering) and some input interfaces.
+This is a simple library, that could be used for small application such as micro-games. It provides all needs to make simple 3D graphics (but without texture rendering) and some input interfaces.
 All operations are made by 4x4 matrix.
 
 It works on mobile platforms!
