@@ -24,7 +24,7 @@ The main idea of the project is using matrices for making any tranformations wit
 ###How it works
 Let all points are 4 dimension vectors (x,y,z,1).
 Let A is a transformations matrix (it may be translation, scale, rotation round X, Y or Z axis)
-So all we need to make this operation with this vector is multiply our vector by this matrix.
+So all we need to make this operation with the vector is multiply our vector by the matrix.
 We are able to make composition of matrices my multiplicate those.
 In the end, we should multiplicate vector for projection matrix and normalize w (the last coordinate). We use 4x4 matrices only to be able to make this operation.
 Now we can draw line above two points on a 2d screen. (It's correct because 3d line goes to a line in one point projection)
