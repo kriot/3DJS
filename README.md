@@ -65,7 +65,7 @@ function KeyUp(event)
 You don't have to change these functions, it's the most useful version.
 And ```Update``` you have to change - it contains logic of your application. It runs every time frame updates (in the best way, with fps you have declared)
 ###Realtime processing 
-Examle of Update function:
+Examle of the Update function:
 ```js
 function Update()
 {
@@ -74,10 +74,10 @@ function Update()
 	mp = new Matrix();
 	mp.MakeP(1/500); // 1/500 - factor of projection. 
 	eng.proj = mp;
-	//here your code. Look down for comments.
+	//here is your code. Look down for comments.
 }
 ```
-"Here your code", but what I should write? What I am able to use?
+"Here is your code", but what should I write? What am I able to use?
 * ```var m = new Matrix();``` - generates new matrix
 * ```m.MakeT(p3);``` - makes matrix of Translation for p3 vector (```new Point3(x,y,z)```)
 * ```m.MakeS(p3);``` makes matrix of scale for p3 vector (usualy uses x=y=z)
@@ -92,7 +92,7 @@ function Update()
 * ```new Line(p3_1,p3_2)``` - makes new line from p3_1 to p3_2
 
 ###Example
-Example of using: 3D Cube, that rotates with your mouse [GitHub Projcet](http://github.com/kriot/3DCube/)
+The example of usage: 3D Cube, that rotates with your mouse [GitHub Projcet](http://github.com/kriot/3DCube/)
 ##References
 
 ####Math:
