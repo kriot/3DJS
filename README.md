@@ -3,7 +3,7 @@
 
 The contents:
  - The aim of the project
- - Strutures that are used
+ - Structures that are used
  - User guide
  - Developer guide
  - References
