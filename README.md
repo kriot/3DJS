@@ -3,7 +3,7 @@
 
 The contents:
  - The aim of the project
- - Stutures that are used
+ - Strutures that are used
  - User guide
  - Developer guide
  - References
@@ -16,10 +16,10 @@ All operations are made by 4x4 matrix.
 
 It works on mobile platforms!
 
-It helps you to understand how does OpenGL and XNA DirectX work.
+It helps you to understand how OpenGL and XNA DirectX works.
 ##Data structures, algorithms and math analysis
 
-The main idea of the project is using matrices to make any tranformations with points (or vectors). 
+The main idea of the project is using matrices for making any tranformations with points (or vectors). 
 
 ###How it works
 Let all points are 4 dimension vectors (x,y,z,1).
