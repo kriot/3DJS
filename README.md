@@ -42,7 +42,7 @@ Firstly, it's nessesary to link 3d.js: in your .html file
 <script src="3d.js"></script>
 ```
 ###Initializing
-Add to your DOMContentLoaded method:
+Add to your DOMContentLoaded method this code:
 ```js
 eng = new Engine3D();
 eng.Init("canv",640,480,Update,Mouse,KeyUp,KeyDown,30); //"canv" - ID of your canvas html5 element, 640,480 - resolution of canvas, Update,Mouse,KeyUp,KeyDown - event handlers, 30 - it's fps that you want.
